@@ -21,7 +21,7 @@ public class PostController {
 
 
     @PostMapping("/callback")
-    public void callback(HttpServletResponse response, @RequestBody VerificationData verificationData) throws IOException, InterruptedException {
+    public void callback(HttpServletResponse response, @RequestBody VerificationData verificationData) throws IOException {
         response.setContentType("text/plain");
         response.setStatus(200);
         if (!Objects.equals(verificationData.subscription.status, "enabled")) {
