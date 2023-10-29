@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import per.kenter.relaybotserv.service.io.request.dto.RequestWebhookBodyData;
 import per.kenter.relaybotserv.service.io.request.dto.RequestWebhookData;
 import per.kenter.relaybotserv.service.io.request.dto.VerificationData;
 
@@ -30,9 +31,8 @@ public class PostController {
     }
 
     @PostMapping("/reqsub")
-    public void requestEventSub(@RequestBody RequestWebhookData REQEventSub) throws URISyntaxException, IOException, InterruptedException {
+    public void requestEventSub(@RequestBody RequestWebhookData REQEventSub) throws IOException, InterruptedException {
         requestEventSubForStream(REQEventSub);
-
     }
 
 }
