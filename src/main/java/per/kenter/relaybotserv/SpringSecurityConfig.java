@@ -27,10 +27,12 @@ public class SpringSecurityConfig {
                 .headers(headers ->
                         headers.frameOptions().sameOrigin())
                 .authorizeHttpRequests(request ->
-                        request.requestMatchers("/callback", "/api/**", "/api/callback").permitAll())
+                        request.requestMatchers("/callback", "/api/**", "/api/callbackerw").permitAll())
                 .sessionManagement(sessionManagement ->
                         sessionManagement.sessionCreationPolicy(STATELESS)
-                ).build();
-
+                )
+                .authorizeHttpRequests(request -> {
+                    request.requestMatchers("/api/reqsub").hasRole("NotCreatedLink");
+                }).build();
     }
 }

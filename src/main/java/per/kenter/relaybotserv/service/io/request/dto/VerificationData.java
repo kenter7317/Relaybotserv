@@ -1,4 +1,4 @@
-package per.kenter.relaybotserv.service.io.Req.dto;
+package per.kenter.relaybotserv.service.io.request.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.annotation.Nullable;
