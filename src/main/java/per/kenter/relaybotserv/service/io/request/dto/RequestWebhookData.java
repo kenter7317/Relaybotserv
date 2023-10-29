@@ -1,23 +1,15 @@
 package per.kenter.relaybotserv.service.io.request.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@Setter
 @AllArgsConstructor
 public class RequestWebhookData {
 
-    @JsonProperty("token")
-    private String token;
+    RequestWebhookBodyData body;
 
-    @JsonProperty("mission")
-    private String mission;
-
-    @JsonProperty("ClientId")
-    private String clientId;
-
-    @JsonProperty("UserId")
-    private String userId;
-
+    RequestWebhookHeaderData header;
 }
