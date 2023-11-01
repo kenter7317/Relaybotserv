@@ -34,5 +34,4 @@ public class PostController {
     public void requestEventSub(@RequestBody RequestWebhookData REQEventSub) throws IOException, InterruptedException {
         requestEventSubForStream(REQEventSub);
     }
-
 }

@@ -17,10 +17,10 @@ public class RestRequestService {
 
         HttpRequest request = builder.
                 url("https://api.twitch.tv/helix/eventsub/subscriptions").
-                setAccessToken(dto.getHeader().getClientSecret()).
-                setClientId(dto.getHeader().getClientId()).
-                setMethod("POST").
-                setBody(dto.getBody()).
+                AccessToken(dto.getHeader().getClientSecret()).
+                ClientId(dto.getHeader().getClientId()).
+                Method("POST").
+                Body(dto.getBody()).
                 build();
 
        return client.send(request, HttpResponse.BodyHandlers.ofString());

@@ -1,0 +1,30 @@
+
+.oauth-button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+	padding-right: 30px;
+	text-shadow: 1px 1px
+}
+
+.login-button {	
+	display: inline-flex;
+    margin: 10px;
+    background-color: #9146ff;
+    border-radius: 20px;
+	padding-lef: -10px;
+    border: none;
+    font-family: 'Gothic A1', sans-serif;
+    font-size: 27px;
+    text-align-all: right;
+    align-content: space-between;
+	position: relative;
+}
+img {
+    margin-left: auto;
+    margin-right: auto;
+    resize: both;
+    width: 45%;
+    height: 45%;
+	align-content: flex-start;
+}

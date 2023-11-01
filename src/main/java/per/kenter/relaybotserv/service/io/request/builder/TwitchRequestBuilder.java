@@ -2,9 +2,7 @@ package per.kenter.relaybotserv.service.io.request.builder;
 
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import per.kenter.relaybotserv.service.io.request.dto.RequestWebhookBodyData;
 
 import java.net.URI;
@@ -13,7 +11,6 @@ import java.util.Map;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 public class TwitchRequestBuilder {
 
     private String url;
@@ -28,22 +25,22 @@ public class TwitchRequestBuilder {
         this.url = url;
         return this;
     }
-    public TwitchRequestBuilder setClientId(String clientId) {
+    public TwitchRequestBuilder ClientId(String clientId) {
         headers.put("Client-ID", clientId);
         return this;
     }
 
-    public TwitchRequestBuilder setAccessToken(String accessToken) {
+    public TwitchRequestBuilder AccessToken(String accessToken) {
         headers.put("Authorization", "Bearer " + accessToken);
         return this;
     }
 
-    public TwitchRequestBuilder setBody(RequestWebhookBodyData dto) {
+    public TwitchRequestBuilder Body(RequestWebhookBodyData dto) {
         body = dto.toString();
         return this;
     }
 
-    public TwitchRequestBuilder setMethod(String method) {
+    public TwitchRequestBuilder Method(String method) {
         this.method = method;
         return this;
     }

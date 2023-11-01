@@ -6,9 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PageController {
 
-
-    @GetMapping("/panel")
-    public String panel() {
-        return "panel";
+    @GetMapping("/index")
+    public String index() {
+        return "index";
     }
 }
