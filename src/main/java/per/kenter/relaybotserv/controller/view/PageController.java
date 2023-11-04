@@ -1,4 +1,4 @@
-package per.kenter.relaybotserv.controller;
+package per.kenter.relaybotserv.controller.view;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

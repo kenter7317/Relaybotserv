@@ -1,4 +1,4 @@
-package per.kenter.relaybotserv.controller;
+package per.kenter.relaybotserv.controller.rest;
 
 import org.springframework.web.bind.annotation.RestController;
 
