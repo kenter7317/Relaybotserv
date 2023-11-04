@@ -40,7 +40,7 @@ public class VerificationData {
         public String callback;
         public String method;
     }
-
+    @Getter
     public static class ConditionEntity {
         public String broadcaster_user_id;
     }

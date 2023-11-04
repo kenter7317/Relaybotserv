@@ -31,11 +31,10 @@ public class SpringSecurityConfig {
                 .sessionManagement(sessionManagement ->
                         sessionManagement.sessionCreationPolicy(STATELESS)
                 )
-                .authorizeHttpRequests(request -> {
-                    request.requestMatchers("/api/reqsub").hasRole("NotCreatedLink");
-                }).
+                .authorizeHttpRequests(request ->
+                        request.requestMatchers("/api/reqsub").hasRole("NotCreatedLink")).
                 formLogin().disable()
-                /*.oauth2Login()*/
+                /*.oauth2Login()*/ // 이 부분을 커스텀 구현해서 결과값으로 Oauth Account를 LinkedUser에 연결시킨다.
                 .build();
     }
 }
