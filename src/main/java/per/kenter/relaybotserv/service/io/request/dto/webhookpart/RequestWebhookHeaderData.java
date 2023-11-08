@@ -1,4 +1,4 @@
-package per.kenter.relaybotserv.service.io.request.dto;
+package per.kenter.relaybotserv.service.io.request.dto.webhookpart;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;

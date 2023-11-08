@@ -3,7 +3,7 @@ package per.kenter.relaybotserv.service.io.request.builder;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import per.kenter.relaybotserv.service.io.request.dto.RequestWebhookBodyData;
+import per.kenter.relaybotserv.service.io.request.dto.webhookpart.RequestWebhookBodyData;
 
 import java.net.URI;
 import java.net.http.HttpRequest;
@@ -52,4 +52,5 @@ public class TwitchRequestBuilder {
                 .headers(String.valueOf(headers))
                 .build();
     }
+
 }

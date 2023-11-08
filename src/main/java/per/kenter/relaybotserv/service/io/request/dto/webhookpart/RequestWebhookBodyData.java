@@ -1,4 +1,4 @@
-package per.kenter.relaybotserv.service.io.request.dto;
+package per.kenter.relaybotserv.service.io.request.dto.webhookpart;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public abstract class RequestWebhookBodyData {
+public class RequestWebhookBodyData {
 
     private TransportEntity transport;
 
