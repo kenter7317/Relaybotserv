@@ -1,5 +1,6 @@
 package per.kenter.relaybotserv.service.io.request.dto.webhookpart;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,6 +26,9 @@ public class RequestWebhookBodyData {
     public static class ConditionEntity {
         private String broadcaster_user_id;
     }
+
+    @JsonProperty("ClientSecret")
+    private String clientSecret;
 
     @Override
     public String toString() {

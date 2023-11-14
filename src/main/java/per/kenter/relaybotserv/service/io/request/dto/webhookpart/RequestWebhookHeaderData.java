@@ -8,7 +8,4 @@ public class RequestWebhookHeaderData {
     @JsonProperty("ClientId")
     private String clientId;
 
-    @JsonProperty("ClientSecret")
-    private String clientSecret;
-
 }

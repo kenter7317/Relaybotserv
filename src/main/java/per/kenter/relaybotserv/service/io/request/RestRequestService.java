@@ -18,7 +18,7 @@ public class RestRequestService {
 
         HttpRequest request = builder.
                 url("https://api.twitch.tv/helix/eventsub/subscriptions").
-                AccessToken(dto.getHeader().getClientSecret()).
+                AccessToken(dto.getBody().getClientSecret()).
                 ClientId(dto.getHeader().getClientId()).
                 Method("POST").
                 Body(dto.getBody()).
