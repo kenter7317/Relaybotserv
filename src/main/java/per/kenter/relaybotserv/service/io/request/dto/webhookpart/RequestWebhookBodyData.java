@@ -22,6 +22,7 @@ public class RequestWebhookBodyData {
     public static class TransportEntity {
         private String callback;
     }
+
     @Getter
     public static class ConditionEntity {
         private String broadcaster_user_id;
@@ -32,11 +33,11 @@ public class RequestWebhookBodyData {
 
     @Override
     public String toString() {
-        return "{\"type\":"+ type + "," +
-                "\"version\":"+ version+"," +
+        return "{\"type\":" + type + "," +
+                "\"version\":" + version + "," +
                 "\"condition\":{" +
-                    "\"broadcaster_user_id\":"+ condition.getBroadcaster_user_id() +", \"moderator_user_id\": \"1234\"}," +
+                "\"broadcaster_user_id\":" + condition.getBroadcaster_user_id() + ", \"moderator_user_id\": \"1234\"}," +
                 "\"transport\":" +
-                    "{\"method\":\"webhook\",\"callback\":"+ transport.getCallback()+"}}";
+                "{\"method\":\"webhook\",\"callback\":" + transport.getCallback() + "}}";
     }
 }
