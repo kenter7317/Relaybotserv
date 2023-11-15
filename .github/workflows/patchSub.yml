@@ -5,7 +5,6 @@ on:
       - test
 jobs: 
   pull-request-for-sub-branch:
-      if : ${{ !contains(github.event.head_commit.message, 'Merge') }}
       runs-on: ubuntu-latest
       steps:
       - name: run -io
@@ -17,7 +16,6 @@ jobs:
           title: ${{ github.event.head_commit.id }}
           body: ${{ github.event.head_commit.message }}
           milestone: 1
-          labels: patching
       - name: run -internal
         id: pr-internal
         uses: emiliopedrollo/create-pull-request@v1.1.0
@@ -27,4 +25,3 @@ jobs:
           title: ${{ github.event.head_commit.id }}
           body: ${{ github.event.head_commit.message }}
           milestone: 1
-          labels: patching
