@@ -34,5 +34,6 @@ public class LinkedUser {
     }
 
     public LinkedUser() {
+        //dummy commit
     }
 }
