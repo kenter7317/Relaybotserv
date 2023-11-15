@@ -14,7 +14,7 @@ jobs:
         with :
           base: test
           head: ${{ github.ref_name }}
-          title: ${{ github.ref_name }}
-          body: github.event.head.commit.message
+          title: ${{ github.event.body.message }}
+          body: ${{ github.event.head.commit.message }}
           milestone: 1
           labels: patching
