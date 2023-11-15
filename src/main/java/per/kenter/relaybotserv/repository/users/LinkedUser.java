@@ -34,6 +34,5 @@ public class LinkedUser {
     }
 
     public LinkedUser() {
-
     }
 }
