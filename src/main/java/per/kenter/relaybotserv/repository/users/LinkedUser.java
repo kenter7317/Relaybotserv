@@ -1,14 +1,15 @@
 package per.kenter.relaybotserv.repository.users;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
+import per.kenter.relaybotserv.repository.account.AccountsSNS;
 import per.kenter.relaybotserv.repository.account.OauthAccount;
+
+import java.util.List;
+import java.util.Map;
 
 @Entity
 @Data
@@ -23,9 +24,8 @@ public class LinkedUser {
 
     private String password;
 
-    @ManyToOne
-    @JoinColumn(name = "AccountList")
-    private OauthAccount account;
+    @OneToMany(mappedBy = "linkedUser")
+    private Map<AccountsSNS, OauthAccount> account;
 
     public LinkedUser(Long id,  String username, String password) {
         this.id = id;
