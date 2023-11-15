@@ -5,7 +5,7 @@ on:
       - test
       
 jobs: 
-  pull-request-for-sub branch:
+  pull-request-for-sub-branch:
       runs-on: ubuntu-latest
       steps:       
       - name: run -io
