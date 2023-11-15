@@ -1,0 +1,20 @@
+name: "Create PR"
+on:
+  push:
+    branches:
+      - io
+      - internal
+jobs: 
+  pull-request-for-test:
+      runs-on: ubuntu-latest
+      steps:       
+      - name: run
+        id: pr
+        uses: emiliopedrollo/create-pull-request@v1.1.0
+        with :
+          base: test
+          head: ${{ steps.branch.outputs.ref }}
+          title: ${{ github.ref_name }}
+          body: github.event.head.commit.message
+          milestone: 1
+          labels: patching

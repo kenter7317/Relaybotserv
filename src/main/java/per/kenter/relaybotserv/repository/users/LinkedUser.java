@@ -24,7 +24,7 @@ public class LinkedUser {
     private String password;
 
     @ManyToOne
-    @JoinColumn(name = "AccountID")
+    @JoinColumn(name = "AccountList")
     private OauthAccount account;
 
     public LinkedUser(Long id,  String username, String password) {
@@ -34,6 +34,6 @@ public class LinkedUser {
     }
 
     public LinkedUser() {
-
+        //re dummy commit
     }
 }
