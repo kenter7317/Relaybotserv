@@ -9,7 +9,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:       
       - name: run -io
-        id: pr
+        id: pr-io
         uses: emiliopedrollo/create-pull-request@v1.1.0
         with :
           base: io
@@ -19,7 +19,7 @@ jobs:
           milestone: 1
           labels: patching
       - name: run -internal
-        id: pr
+        id: pr-internal
         uses: emiliopedrollo/create-pull-request@v1.1.0
         with :
           base: internal
