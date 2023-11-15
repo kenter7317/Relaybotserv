@@ -6,7 +6,6 @@ on:
       - internal
 jobs: 
   pull-request-for-test:
-      if: ${{ (contains(github.event.repository, 'BUG') }}
       runs-on: ubuntu-latest
       steps:       
       - name: run
