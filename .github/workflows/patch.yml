@@ -6,6 +6,7 @@ on:
       - internal
 jobs: 
   pull-request-for-test:
+      if : ${{ !contains(github.event.head_commit.message, 'Merge') }}
       runs-on: ubuntu-latest
       steps:       
       - name: run
