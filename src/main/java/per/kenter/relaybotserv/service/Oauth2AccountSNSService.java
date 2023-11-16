@@ -9,7 +9,8 @@ import org.springframework.stereotype.Service;
 import per.kenter.relaybotserv.repository.OauthAccountRepository;
 @RequiredArgsConstructor
 @Service
-public class AccountSNSService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
+public class Oauth2AccountSNSService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
+
     private final OauthAccountRepository repository;
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
