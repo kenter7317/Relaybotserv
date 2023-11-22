@@ -1,19 +1,29 @@
 package per.kenter.relaybotserv;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import per.kenter.relaybotserv.service.Oauth2AccountSNSService;
+import per.kenter.relaybotserv.service.user.UserService;
 
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
 
 @Configuration
 @EnableMethodSecurity
 public class SpringSecurityConfig {
+
+    @Autowired
+    private Oauth2AccountSNSService oauth2AccountSNSService;
+
+    @Autowired
+    UserService userService;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -33,8 +43,18 @@ public class SpringSecurityConfig {
                 )
                 .authorizeHttpRequests(request ->
                         request.requestMatchers("/api/reqsub").hasRole("NotCreatedLink")).
-                formLogin().disable()
-                /*.oauth2Login()*/ // 이 부분을 커스텀 구현해서 결과값으로 Oauth Account를 LinkedUser에 연결시킨다.
-                .build();
+                formLogin( login -> login.loginPage("/login").defaultSuccessUrl("/index"))
+                .oauth2Login().defaultSuccessUrl("/login-succeed").userInfoEndpoint(endpoint -> endpoint.userService(oauth2AccountSNSService))
+                .and().build();
+    }
+
+    @Bean
+    public DaoAuthenticationProvider authenticationProvider() throws Exception {
+        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+
+        provider.setPasswordEncoder(passwordEncoder());
+        provider.setUserDetailsService(userService);
+
+        return provider;
     }
 }
