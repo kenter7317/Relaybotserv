@@ -13,7 +13,7 @@ jobs:
         uses: cloudtype-github-actions/connect@v1
         with:
           token: ${{ secrets.CLOUDTYPE_TOKEN }}
-          ghtoken: ${{ secrets.GITHUB_TOKEN }}
+          ghtoken: ${{ secrets.GHP_TOKEN }}
       - name: Deploy
         uses: cloudtype-github-actions/deploy@v1
         with:
@@ -24,8 +24,7 @@ jobs:
             name: relaybotserv
             app: java@17
             options:
-              ports: 8080
-              start: ""
+              ports: "54976"
             context:
               git:
                 url: git@github.com:${{ github.repository }}.git
