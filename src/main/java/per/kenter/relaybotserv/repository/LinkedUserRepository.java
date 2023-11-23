@@ -9,6 +9,8 @@ import java.util.Optional;
 public interface LinkedUserRepository extends JpaRepository<LinkedUser, Long>
 {
     Optional<LinkedUser> findById(Long id);
+
+    Optional<LinkedUser> findByUsername(String username);
     @Override
     List<LinkedUser> findAll();
 }

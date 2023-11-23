@@ -7,6 +7,10 @@ import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 import per.kenter.relaybotserv.repository.OauthAccountRepository;
+import per.kenter.relaybotserv.repository.account.AccountsSNS;
+
+import static per.kenter.relaybotserv.service.DataProcessUtil.getAccountsSNS;
+
 @RequiredArgsConstructor
 @Service
 public class Oauth2AccountSNSService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
@@ -14,7 +18,14 @@ public class Oauth2AccountSNSService implements OAuth2UserService<OAuth2UserRequ
     private final OauthAccountRepository repository;
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
-
+        AccountsSNS sns = getAccountsSNS(userRequest);
+        switch (sns) {
+            case Twitch -> {
+            }
+            case Youtube -> {
+            }
+            default -> throw new IllegalStateException("Unexpected value: " + getAccountsSNS(userRequest));
+        }
         return null;
     }
 }

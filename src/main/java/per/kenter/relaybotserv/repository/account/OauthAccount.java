@@ -3,7 +3,10 @@ package per.kenter.relaybotserv.repository.account;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import per.kenter.relaybotserv.repository.users.LinkedUser;
@@ -15,7 +18,10 @@ import static per.kenter.relaybotserv.service.DataProcessUtil.processOAuthAccoun
 
 
 @Data
+@Builder
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class OauthAccount implements OAuth2User {
 
     @Id

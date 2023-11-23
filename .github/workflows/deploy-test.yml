@@ -24,8 +24,7 @@ jobs:
             name: relaybotserv
             app: java@17
             options:
-              ports: 8080
-              start: ""
+              ports: "54976"
             context:
               git:
                 url: git@github.com:${{ github.repository }}.git
