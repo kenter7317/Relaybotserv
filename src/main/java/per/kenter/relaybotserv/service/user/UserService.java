@@ -1,6 +1,9 @@
-package per.kenter.relaybotserv.service;
+package per.kenter.relaybotserv.service.user;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import per.kenter.relaybotserv.repository.LinkedUserRepository;
 import per.kenter.relaybotserv.repository.users.LinkedUser;
@@ -9,7 +12,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
 
     private final LinkedUserRepository repository;
 
@@ -27,5 +30,8 @@ public class UserService {
         repository.deleteById(id);
     }
 
-
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return repository.findByUsername(username).orElseThrow();
+    }
 }
