@@ -1,9 +1,10 @@
-package per.kenter.relaybotserv.service.io.request.builder;
+package per.kenter.relaybotserv.service.io.request.builder.builders;
 
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import per.kenter.relaybotserv.service.io.request.dto.webhookpart.RequestWebhookBodyData;
+import per.kenter.relaybotserv.service.io.request.builder.RequestBuilderImpl;
+import per.kenter.relaybotserv.service.io.request.dto.twitch.webhookpart.RequestWebhookBodyData;
 
 import java.net.URI;
 import java.net.http.HttpRequest;
@@ -11,7 +12,7 @@ import java.util.Map;
 
 @AllArgsConstructor
 @NoArgsConstructor
-public class TwitchRequestBuilder {
+public class TwitchRequestBuilder extends RequestBuilderImpl {
 
     private String url;
 

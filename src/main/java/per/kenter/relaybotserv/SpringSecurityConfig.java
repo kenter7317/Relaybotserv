@@ -19,10 +19,8 @@ import static org.springframework.security.config.http.SessionCreationPolicy.STA
 @EnableMethodSecurity
 public class SpringSecurityConfig {
 
-    @Autowired
     private Oauth2AccountSNSService oauth2AccountSNSService;
 
-    @Autowired
     UserService userService;
 
     @Bean
