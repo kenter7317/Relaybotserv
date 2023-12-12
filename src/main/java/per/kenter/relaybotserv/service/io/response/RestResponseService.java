@@ -1,7 +1,7 @@
 package per.kenter.relaybotserv.service.io.response;
 
 import jakarta.servlet.http.HttpServletResponse;
-import per.kenter.relaybotserv.service.io.request.dto.VerificationData;
+import per.kenter.relaybotserv.service.io.request.dto.twitch.VerificationData;
 
 import java.io.IOException;
 import java.util.Objects;
