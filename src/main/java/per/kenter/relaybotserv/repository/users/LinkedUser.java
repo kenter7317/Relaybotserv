@@ -6,16 +6,14 @@ import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
-import per.kenter.relaybotserv.repository.account.AccountsSNS;
 import per.kenter.relaybotserv.repository.account.OauthAccount;
 import per.kenter.relaybotserv.repository.users.info.Role;
 import per.kenter.relaybotserv.repository.users.info.UserValidState;
 
 import java.util.Collection;
-import java.util.Map;
+import java.util.List;
 
 @Entity
-@Builder
 @Getter
 @RequiredArgsConstructor
 public class LinkedUser implements UserDetails {
@@ -32,8 +30,8 @@ public class LinkedUser implements UserDetails {
     private UserValidState state;
 
 
-    @OneToMany(mappedBy = "linkedUser")
-    private Map<AccountsSNS, OauthAccount> account;
+    @OneToMany(mappedBy = "user")
+    private List<OauthAccount> account;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
